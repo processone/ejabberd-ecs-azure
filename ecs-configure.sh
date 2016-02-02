@@ -19,3 +19,5 @@ chown ejabberd:ejabberd /opt/ejabberd* -R
 # Add proper init script
 ls /opt/|grep ejabberd | xargs -ixxx ln -s /opt/xxx/bin/ejabberd.init /etc/init.d/ejabberd
 
+# Start ejabberd
+/etc/init.d/ejabberd start
