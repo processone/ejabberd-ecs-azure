@@ -17,5 +17,5 @@ gdebi -n /tmp/ejabberd-latest.deb
 chown ejabberd:ejabberd /opt/ejabberd* -R
 
 # Add proper init script
-ls /opt/|grep ejabberd | xargs -ixxx ln -s /opt/xxx/bin/ejabberd.init /etc/init.d/ejabberd",
+ls /opt/|grep ejabberd | xargs -ixxx ln -s /opt/xxx/bin/ejabberd.init /etc/init.d/ejabberd
 
