@@ -1,0 +1,7 @@
+{
+  "itemDisplayName": "ejabberd Community Server for Azure",
+  "description": "This template create ejabberd Community Server on Azure platform. ejabberd is flexible and highly available XMPP server. This template is using build-in mnesia database as backend.",
+  "summary": "Create ejabberd XMPP server",
+  "githubUsername": "processone",
+  "dateUpdated": "2016-2-2"
+}
