@@ -8,8 +8,8 @@
     "adminUsername": {
       "value": "userName"
     },
-    "adminPassword": {
-      "value": "password"
+    "sshKeyData": {
+      "value": "GEN-SSH-PUB-KEY"
     },
     "dnsNameForPublicIP": {
       "value": "uniqueDNS"

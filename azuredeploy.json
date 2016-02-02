@@ -27,10 +27,10 @@
         "description": "User name for the Virtual Machine and ejabberd admin."
       }
     },
-    "adminPassword": {
-      "type": "securestring",
+    "sshKeyData": {
+      "type": "string",
       "metadata": {
-        "description": "Password for the Virtual Machine and ejabberd admin"
+        "description": "SSH public key file."
       }
     },
     "dnsNameForPublicIP": {
@@ -155,7 +155,7 @@
         "osProfile": {
           "computerName": "[variables('vmName')]",
           "adminUsername": "[parameters('adminUsername')]",
-          "adminPassword": "[parameters('adminPassword')]"
+          "keyData": "[parameters('sshKeyData')]"
         },
         "storageProfile": {
           "imageReference": {
