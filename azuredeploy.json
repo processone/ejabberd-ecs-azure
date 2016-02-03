@@ -41,7 +41,9 @@
     },
     "vmAzName": {
       "type": "string",
+      "metadata": {
         "description": "VM Name"
+      }
     },
     "ubuntuOSVersion": {
       "type": "string",
