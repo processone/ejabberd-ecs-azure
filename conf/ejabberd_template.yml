@@ -94,7 +94,7 @@ log_rate_limit: 100
 ##   - "example.org"
 ##
 hosts:
-  - "AZURE_HOST"
+  - "AZURE_HOST.cloudapp.net"
 
 ##
 ## route_subdomains: Delegate subdomains to other XMPP servers.
