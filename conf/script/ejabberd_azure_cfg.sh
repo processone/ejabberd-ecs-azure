@@ -5,6 +5,12 @@
 # vars
 ejabberdInstall="/opt/ejabberd"
 
+fixLink(){
+
+  # Workaround for bug related with inproper ejabberd install dir found in Azure image
+  test -e /opt/ejabberd || ls -d /opt/ejabberd-* | xargs -ixxx ln -s xxx /opt/ejabberd
+}
+
 updateTemplates(){
 
   isThere=$(curl -s https://raw.githubusercontent.com/processone/ejabberd-ecs-azure/master/conf/ejabberd_template.yml | grep -c "ejabberd configuration file")
@@ -57,6 +63,7 @@ if test "$#" -ne 3; then
   exit 1
 fi
 
+fixLink
 updateTemplates
 setDomain $1
 setAdmin $2
