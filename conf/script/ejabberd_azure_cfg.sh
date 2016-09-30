@@ -59,7 +59,12 @@ registerAdmin(){
 
 startServer(){
 
-  /etc/init.d/ejabberd start
+  status=$(/etc/init.d/ejabberd status | grep -c "status: started")
+  if [ "$status" -ne "1" ];then
+      /etc/init.d/ejabberd start
+    else
+      echo "ejabberd already started"
+  fi
 }
 
 # validate
