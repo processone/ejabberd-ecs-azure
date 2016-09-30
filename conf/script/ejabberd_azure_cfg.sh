@@ -5,10 +5,15 @@
 # vars
 ejabberdInstall="/opt/ejabberd"
 
-fixLink(){
+Hotfix(){
 
   # Workaround for bug related with inproper ejabberd install dir found in Azure image
   test -e /opt/ejabberd || ls -d /opt/ejabberd-* | xargs -ixxx ln -s xxx /opt/ejabberd
+
+  # Remove standard lib from ejabberd installer due to errors
+  rm -f $ejabberdInstall/lib/linux-x86_64/libtinfo.so.5
+  ln -s /lib/x86_64-linux-gnu/libtinfo.so.5 $ejabberdInstall/lib/linux-x86_64/libtinfo.so.5
+
 }
 
 updateTemplates(){
@@ -63,7 +68,7 @@ if test "$#" -ne 3; then
   exit 1
 fi
 
-fixLink
+Hotfix
 updateTemplates
 setDomain $1
 setAdmin $2
