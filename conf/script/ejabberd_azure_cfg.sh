@@ -14,6 +14,10 @@ Hotfix(){
   rm -f $ejabberdInstall/lib/linux-x86_64/libtinfo.so.5
   ln -s /lib/x86_64-linux-gnu/libtinfo.so.5 $ejabberdInstall/lib/linux-x86_64/libtinfo.so.5
 
+  # Remove all leftovers from installer
+  /etc/init.d/ejabberd stop
+  rm -rf /opt/ejabberd/logs/* /opt/ejabberd/database/ejabberd@localhost/*
+
 }
 
 updateTemplates(){
