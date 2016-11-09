@@ -170,6 +170,10 @@ listen:
   ##       options: []
   - 
     port: 5280
+    tls: true
+    certfile: "/opt/ejabberd/conf/AZURE_HOST.pem"
+    protocol_options:
+      - "no_sslv3"
     module: ejabberd_http
     request_handlers:
       "/websocket": ejabberd_http_ws
