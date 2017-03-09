@@ -47,7 +47,7 @@ setAdmin(){
 getSSL(){
 
   echo "Generating self-signed certificate for domain $1"
-  openssl req -x509 -newkey rsa:2048 -sha256 -keyout /tmp/azuredomain.key -out /tmp/azuredomain.crt -nodes -days 365 -subj "/C=US/ST=US_State/L=NA/O=IT/CN=$1\.cloudapp.net"
+  openssl req -x509 -newkey rsa:2048 -sha256 -keyout /tmp/azuredomain.key -out /tmp/azuredomain.crt -nodes -days 365 -subj "/C=US/ST=US_State/L=NA/O=IT/CN=$1"
   cat /tmp/azuredomain.crt > $ejabberdInstall/conf/$1\.pem
   cat /tmp/azuredomain.key >> $ejabberdInstall/conf/$1\.pem
   rm -f /tmp/azuredomain.key /tmp/azuredomain.crt
@@ -57,8 +57,8 @@ getSSL(){
 
 registerAdmin(){
 
-  echo "Registering admin: $1 with password: $3 on $2"."cloudapp.net"
-  su - ejabberd -c "$ejabberdInstall/bin/ejabberdctl register $1 $2\.cloudapp.net $3"
+  echo "Registering admin: $1 with password: $3 on $2"
+  su - ejabberd -c "$ejabberdInstall/bin/ejabberdctl register $1 $2 $3"
 }
 
 startServer(){
