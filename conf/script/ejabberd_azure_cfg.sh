@@ -7,6 +7,9 @@ ejabberdInstall="/opt/ejabberd"
 
 Hotfix(){
 
+  # Install curl (hard to believe but it's not default on Debian...
+  apt-get -y install curl
+
   # Workaround for bug related with inproper ejabberd install dir found in Azure image
   test -e /opt/ejabberd || ls -d /opt/ejabberd-* | xargs -ixxx ln -s xxx /opt/ejabberd
 
